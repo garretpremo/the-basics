@@ -1,0 +1,13 @@
+name: basics
+services:
+  basics:
+    container_name: basics
+    image: garretpremo/basics
+    ports:
+      - 8156:80
+    networks:
+      nginxproxymanager:
+
+networks:
+  nginxproxymanager:
+    external: true
