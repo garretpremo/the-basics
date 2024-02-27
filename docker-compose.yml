@@ -1,0 +1,6 @@
+name: basics
+services:
+  basics:
+    build: .
+    ports:
+      - 8089:80
