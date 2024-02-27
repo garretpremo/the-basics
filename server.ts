@@ -1,7 +1,10 @@
 Bun.serve({
-    fetch(req: Request): Response | Promise<Response> {
-      return new Response(Bun.file("./index.html"));
-    },
-  
-    port: 8156,
-  });
+    fetch(req) {
+        const url = new URL(req.url);
+        if (url.pathname.endsWith("/") || url.pathname.endsWith("/index.html"))
+            return new Response(Bun.file(import.meta.dir + "/index.html"));
+      
+        // all other routes
+        return new Response("Hello!");
+    }
+});
