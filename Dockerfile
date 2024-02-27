@@ -20,7 +20,7 @@ COPY server/package.json package.json
 RUN bun install
 
 # Copy Frontend Build
-COPY --from=build /basics/dist/basics/browser/ ./
+COPY --from=build /basics/dist/basics ./public/
 
 # Copy server files
 COPY server/src src

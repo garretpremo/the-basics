@@ -3,7 +3,7 @@ import express from 'express';
 const app = express();
 
 // Expose the frontend build
-app.use('/', express.static('public/'));
+app.use('/', express.static('public/browser'));
 
 // Start the server
 const port = process.env['PORT'] || 8156;
